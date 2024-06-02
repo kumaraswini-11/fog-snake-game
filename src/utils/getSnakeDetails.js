@@ -1,8 +1,16 @@
-const GRID_ROWS = 10;
-const GRID_COLS = 20;
-const GRID_SIZE = GRID_ROWS * GRID_COLS;
-const MIN_SNAKE_LENGTH = 3;
-const MAX_SNAKE_LENGTH = 6;
+import {
+  GRID_ROWS,
+  GRID_COLS,
+  GRID_SIZE,
+  MIN_SNAKE_LENGTH,
+  MAX_SNAKE_LENGTH,
+} from "./constant";
+
+export const getRandomPosition = () => Math.floor(Math.random() * GRID_SIZE);
+
+export const getRandomSnakeLength = () =>
+  Math.floor(Math.random() * (MAX_SNAKE_LENGTH - MIN_SNAKE_LENGTH + 1)) +
+  MIN_SNAKE_LENGTH;
 
 export const getRandomAdjacentPosition = (position) => {
   const directions = [-1, 1, -GRID_COLS, GRID_COLS]; // left, right, up, down

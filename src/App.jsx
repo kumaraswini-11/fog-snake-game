@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import { ControlPanel, GameGrid, GridCell } from "./components";
+import { GRID_ROWS, GRID_COLS } from "./utils/constant";
+import { ControlPanel, GameGrid } from "./components";
+import {
+  generateRandomSnake,
+  getRandomPosition,
+} from "./utils/getSnakeDetails";
+import useSnakeMovement from "./hooks/useSnakeMovement";
 
 const App = () => {
   const [diamondPosition, setDiamondPosition] = useState(getRandomPosition());
   const [snakes, setSnakes] = useState([generateRandomSnake()]);
   const [score, setScore] = useState(0);
   const [isGameRunning, setIsGameRunning] = useState(false);
-  const [playerPosition, setPlayerPosition] = useState(null); // Player's initial position
+  const [playerPosition, setPlayerPosition] = useState(null);
 
   useSnakeMovement(isGameRunning, snakes, setSnakes, diamondPosition, setScore);
 

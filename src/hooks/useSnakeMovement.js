@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { getRandomAdjacentPosition } from "../utils/getSnakeDetails";
 
 const useSnakeMovement = (
   isGameRunning,
@@ -25,3 +27,5 @@ const useSnakeMovement = (
     return () => clearInterval(intervalId);
   }, [isGameRunning, snakes, setSnakes, diamondPosition, setScore]);
 };
+
+export default useSnakeMovement;

@@ -1,3 +1,6 @@
+import { GRID_SIZE } from "../utils/constant";
+import { GridCell } from "./";
+
 const GameGrid = ({
   diamondPosition,
   snakes,
